@@ -7,7 +7,7 @@ export default class Nav extends Component {
       <nav>
           <ul>
             <li> <Link to="/">Home</Link> </li>
-            <li> <Link to="/Form">Create</Link> </li>
+            <li> <Link to="/form">Create</Link> </li>
             <li> <Link to="/list">Dashboard</Link> </li>
           </ul>
       </nav>
