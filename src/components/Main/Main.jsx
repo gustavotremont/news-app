@@ -10,8 +10,12 @@ export default class Main extends Component {
     super(props)
   
     this.state = {
-       createdNews: []
+       NewsList: [],
     }
+  }
+
+  createNew = (article) => {
+    this.setState({NewsList: [...this.state.NewsList, ...article]})
   }
 
   handleSubmit = (event) => {
@@ -26,7 +30,14 @@ export default class Main extends Component {
       url: event.target.url.value
     }
 
-    this.setState({createdNews: [...this.state.createdNews, article]})
+    this.createNew([article])
+  }
+
+  deleteAllINews = () => this.setState({ NewsList: [] })
+    
+  deleteNew = i => {
+      const NewsList = this.state.NewsList.filter((article, j) => j !== i)
+      this.setState({ NewsList })
   }
 
   render() {
@@ -35,7 +46,7 @@ export default class Main extends Component {
         <Routes>
           <Route path="/" element={<Home/>} exact />  
           <Route path="/form" element={<Form submit={this.handleSubmit}/>} /> 
-          <Route path="/list" element={<NewsList newsList={this.state.createdNews}/>} /> 
+          <Route path="/list" element={<NewsList newsList={this.state.NewsList} createNew={this.createNew} deleteNew={this.deleteNew}/>} /> 
         </Routes>
       </main>
     )
