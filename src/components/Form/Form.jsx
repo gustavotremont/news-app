@@ -1,10 +1,42 @@
 import React, { Component } from 'react'
+import { Navigate } from 'react-router-dom'
+import Button from '@mui/material/Button';
 
 export default class Form extends Component {
+
+  constructor(props) {
+    super(props)
+  
+    this.state = {
+      redirect: false
+    }
+  }
+  
+
+  handleSubmit = (event) => {
+    event.preventDefault()
+
+    const article = {
+      title: event.target.title.value,
+      text: event.target.text.value,
+      date: event.target.date.value,
+      category: event.target.category.value,
+      image: event.target.image.value,
+      url: event.target.url.value
+    }
+
+    this.props.createNew([article])
+
+    this.setState({ redirect: true })
+  }
+
   render() {
+
+    if(this.state.redirect) { return <Navigate to='/list'/> }
+    
     return (
       <div>
-        <form onSubmit={this.props.submit}>
+        <form onSubmit={this.handleSubmit}>
             <label htmlFor="title">Title</label>
             <input type="text" name="title" id="title" />
 

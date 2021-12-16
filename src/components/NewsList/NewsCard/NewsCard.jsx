@@ -10,6 +10,7 @@ export default class NewsCard extends Component {
         <p>{this.props.article.category}</p>
         <p>{this.props.article.url}</p>
         <img src={this.props.article.image} alt="news" />
+        <button onClick={this.props.delete}>Delete</button>
       </article>
     )
   }
