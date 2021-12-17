@@ -9,9 +9,7 @@ export default class Nav extends Component {
   
   render() {
     return (
-      <nav>
-
-      <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+      <Box  sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {routes.map(route => {
               return <Button
                         onClick={this.handleCloseNavMenu}
@@ -21,30 +19,6 @@ export default class Nav extends Component {
                       </Button>
             })}
       </Box>
-
-      
-          {/* <Button
-          onClick={this.handleCloseNavMenu}
-          sx={{ my: 2, color: 'white', display: 'block' }}
-          >
-            <Link to="/">Home</Link>
-          </Button>
-
-          <Button
-          onClick={this.handleCloseNavMenu}
-          sx={{ my: 2, color: 'white', display: 'block' }}
-          >
-            <Link to="/form">Create</Link>
-          </Button>
-
-          <Button
-          onClick={this.handleCloseNavMenu}
-          sx={{ my: 2, color: 'white', display: 'block' }}
-          >
-            <Link to="/list">Dashboard</Link>
-          </Button> */}
-          
-      </nav>
     )
   }
 }
