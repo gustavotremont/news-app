@@ -49,22 +49,55 @@ export default class Header extends Component {
   render() {
     return (
       <>
-
         <AppBar position="static">
-            <Toolbar sx={{ px: 200, justifyContent: 'center'}}>
+            <Toolbar >
+
+              <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+                <IconButton
+                  size="large"
+                  onClick={this.handleOpenNavMenu}
+                  color="inherit"
+                >
+                  <MenuIcon />
+                </IconButton>
+
+                <Menu
+                  id="menu-appbar"
+                  anchorEl={this.state.anchorElNav}
+                  anchorOrigin={{
+                    vertical: "bottom",
+                    horizontal: "left"
+                  }}
+                  keepMounted
+                  open={this.state.anchorElNav}
+                  onClose={this.handleCloseNavMenu}
+                  sx={{
+                    display: { xs: "block", md: "none" }
+                  }}
+                >
+                  <Nav screen='movil' close={this.handleCloseNavMenu}/>
+                </Menu>  
+              </Box>
+
+              {/* <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }} >
+                <MenuIcon />
+              </IconButton> */}
 
               <IconButton sx={{ py: 0 }} >
                 <img src="https://cdn-icons-png.flaticon.com/512/21/21601.png" alt="logo" className='image-logo'/>
               </IconButton> 
 
-              <Box>
-                <Nav/>
-              </Box>
+
+              <Nav screen='desktop' />
+              
+              
+              <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                avatar
+              </Typography>
 
                   
             </Toolbar>
         </AppBar>
-
 
         {/* <userContext.Consumer>
           {
