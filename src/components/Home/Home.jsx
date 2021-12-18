@@ -1,5 +1,9 @@
+import './Home.css'
 import React, { Component } from 'react'
 import { userContext } from '../../context/UserContext'
+import { Container, Typography } from '@mui/material'
+import { TextField } from '@mui/material'
+import { Button } from '@mui/material'
 
 export default class Home extends Component {
   static contextType = userContext  
@@ -25,14 +29,15 @@ export default class Home extends Component {
 
   render() {
     return (
-      <section>
-        <form onSubmit={this.handleSubmit}>
-          <label htmlFor="user">Login</label>
-          <input type="text" name="user" id="user" />
-
-          <input type="submit" value="Sign In" />
+      <Container maxWidth='lg' sx={{mt: '50px'}} >
+        <form className='form-login' onSubmit={this.handleSubmit}>
+          <Typography variant="h4" > Access with useaname</Typography>
+          <TextField id="standard-basic" name='user' label="Username" variant="standard" fullWidth={true} sx={{py: '16px'}}/>
+          <Button type='submit' variant="contained" size="large" fullWidth={true} sx={{my: '8px'}}>Login</Button>
         </form>
-      </section>
+      </Container>
+      // <section>
+      // </section>
     )
   }
 }
