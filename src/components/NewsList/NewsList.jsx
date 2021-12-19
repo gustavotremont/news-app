@@ -1,3 +1,4 @@
+import { Container } from '@mui/material';
 import React, { Component } from 'react'
 import { v4 as uuidv4 } from 'uuid';
 import NewsCard from './NewsCard';
@@ -12,9 +13,9 @@ export default class NewsList extends Component {
 
   render() {
     return (
-      <section>
-        {this.paintNews()}
-      </section>
+      <Container sx={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+          {this.paintNews()}
+      </Container>
     )
   }
 }
