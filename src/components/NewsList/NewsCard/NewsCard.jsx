@@ -9,7 +9,7 @@ export default class NewsCard extends Component {
       <Card sx={{ maxWidth: '100%', my: '8px' }} component="article" key={this.key}>
 
         <CardHeader
-            sx={{ textAlign: 'start'}}
+            sx={{ textAlign: 'start', py: '5px'}}
             titleTypographyProps={{variant: 'subtitle2'}}
             title={this.props.article.category}
             subheaderTypographyProps={{variant: 'caption'}}
@@ -25,19 +25,10 @@ export default class NewsCard extends Component {
           <Typography variant="body1" color="text.secondary" sx={{textAlign: 'start'}}>
             {this.props.article.text}
           </Typography>
-
-          {/* <Box sx={{display: 'flex', flexDirection: 'column'}} >
-            <Typography variant="subtitle2" color="text.secondary" sx={{textAlign: 'start'}}>
-              Category: {this.props.article.category}
-            </Typography>
-            <Typography variant="subtitle2" color="text.secondary" sx={{textAlign: 'start'}}>
-              Date: {this.props.article.date}
-            </Typography>
-          </Box> */}
         </CardContent>
 
         <CardActions sx={{justifyContent: 'space-evenly'}} >
-          <Link href={this.props.article.url}>Article's Link</Link>
+          <Link href={this.props.article.url} target="_blank" rel="noopener">Article's Link</Link>
           <Button size="small" variant="contained" onClick={this.props.delete} color="error">Delete</Button>
         </CardActions>
       </Card>
