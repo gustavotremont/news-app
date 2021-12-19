@@ -5,6 +5,8 @@ import Form from '../Form'
 import Home from '../Home'
 import NewsList from '../NewsList'
 
+import breakinNews from '../../assets/images/breaking-news.jpg'
+
 export default class Main extends Component {
 
   constructor(props) {
@@ -25,7 +27,7 @@ export default class Main extends Component {
   }
 
   async componentDidMount() {
-    const resp = await axios.get(`https://api.nytimes.com/svc/topstories/v2/technology.json?api-key=${process.env.REACT_APP_API_KEY}`)
+    const resp = await axios.get(`https://api.nytimes.com/svc/topstories/v2/arts.json?api-key=${process.env.REACT_APP_API_KEY}`)
     const data = resp.data
     
     const newsArray = data.results.map( element => {
@@ -34,7 +36,7 @@ export default class Main extends Component {
                           text: element.abstract,
                           date: element.published_date,
                           category: element.section,
-                          image: element.multimedia[0].url,
+                          image: element.multimedia[0].url || breakinNews,
                           url: element.short_url
                         }
     })
