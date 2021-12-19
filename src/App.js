@@ -12,7 +12,6 @@ import Main from './components/Main';
 import { userContext } from './context/UserContext';
 
 export default class App extends Component {
-
   constructor(props) {
     super(props)
   
