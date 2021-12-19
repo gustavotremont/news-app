@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 
 import Nav from '../Nav'
 import {userContext} from '../../context/UserContext';
+import newsLogo from '../../assets/images/news-logo.png'
 
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -79,7 +80,7 @@ export default class Header extends Component {
               </Box>
 
               <IconButton sx={{ flexGrow: 1, justifyContent: 'start', pl: 0 }} >
-                <img src="https://cdn-icons-png.flaticon.com/512/21/21601.png" alt="logo" className='image-logo'/>
+                <img src={newsLogo} alt="logo" className='image-logo'/>
               </IconButton> 
 
 
