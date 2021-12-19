@@ -36,8 +36,6 @@ export default class Home extends Component {
           <Button type='submit' variant="contained" size="large" fullWidth={true} sx={{my: '8px'}}>Login</Button>
         </form>
       </Container>
-      // <section>
-      // </section>
     )
   }
 }
