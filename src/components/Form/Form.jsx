@@ -3,6 +3,7 @@ import { Navigate } from 'react-router-dom'
 import { Container, Typography } from '@mui/material'
 import { TextField } from '@mui/material'
 import { Button } from '@mui/material'
+import dayjs from 'dayjs'
 
 export default class Form extends Component {
 
@@ -36,8 +37,9 @@ export default class Form extends Component {
 
     if(this.state.redirect) { return <Navigate to='/list'/> }
 
-    const date = new Date()
-    const actualDate = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
+    // const date = new Date()
+    // const actualDate = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
+    const actualDate = dayjs().format('YYYY-MM-DD')
     
     return (
         <Container maxWidth='lg' sx={{mt: '50px', mb: '120px'}} >
