@@ -40,7 +40,7 @@ export default class Form extends Component {
     const actualDate = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
     
     return (
-        <Container maxWidth='lg' sx={{mt: '50px'}} >
+        <Container maxWidth='lg' sx={{mt: '50px', mb: '120px'}} >
           <form className='form-news' onSubmit={this.handleSubmit}>
             <Typography variant="h4" >Create a New Article</Typography>
 
@@ -53,28 +53,6 @@ export default class Form extends Component {
 
             <Button type='submit' variant="contained" size="large" fullWidth sx={{my: '8px'}}>Create</Button>
           </form>
-
-           {/* <form onSubmit={this.handleSubmit}>
-            <label htmlFor="title">Title</label>
-            <input type="text" name="title" id="title" />
-
-            <label htmlFor="text">Text</label>
-            <input type="text" name="text" id="text" />
-
-            <label htmlFor="date">Date</label>
-            <input type="date" name="date" id="date" />
-
-            <label htmlFor="category">Category</label>
-            <input type="text" name="category" id="category" />
-
-            <label htmlFor="image">Image's URL</label>
-            <input type="url" name="image" id="image" />
-
-            <label htmlFor="url">New's URL</label>
-            <input type="url" name="url" id="url" />
-
-            <input type="submit" value="Create" />
-        </form> */}
 
         </Container>
     )

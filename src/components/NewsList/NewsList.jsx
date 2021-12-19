@@ -13,7 +13,7 @@ export default class NewsList extends Component {
 
   render() {
     return (
-      <Container sx={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+      <Container sx={{display: 'flex', flexDirection: 'column', alignItems: 'center', mb: '120px'}}>
           {this.paintNews()}
       </Container>
     )
